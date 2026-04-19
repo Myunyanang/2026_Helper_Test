@@ -48,7 +48,7 @@ public class ChangeBones : MonoBehaviour
                 }
             }
 
-            renderer.rootBone = body.transform.Find("Armature.001/Hips");
+            renderer.rootBone = body.transform.Find("Armature/mixamorig:Hips");
 
             renderer.bones = boneArray;
         }
