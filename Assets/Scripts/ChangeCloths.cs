@@ -19,8 +19,6 @@ public class ChangeCloths : MonoBehaviour
     {
         ChangeCloth();
         aniCon = body.GetComponent<AnimetorController>();
-
-        aniCon.onChangeCloth += ChangeCloth;
     }
 
     void Update()
@@ -50,6 +48,7 @@ public class ChangeCloths : MonoBehaviour
             clothIndex = cloths.Length - 1;
         }
         onChangeMotionEvent.Invoke();
+        ChangeCloth();
     }
 
     public void ClickRightButton()
@@ -61,5 +60,6 @@ public class ChangeCloths : MonoBehaviour
             clothIndex = 0;
         }
         onChangeMotionEvent.Invoke();
+        ChangeCloth();
     }
 }

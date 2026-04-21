@@ -8,8 +8,6 @@ public class AnimetorController : MonoBehaviour
     Animator anim;
     public ChangeCloths chanClo;
 
-    public Action onChangeCloth;
-
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -26,10 +24,5 @@ public class AnimetorController : MonoBehaviour
     public void PlayChangeAnimetion()
     {
         anim.SetTrigger("isChangeCloth");
-    }
-
-    public void EndChangeCloth()
-    {
-        onChangeCloth.Invoke();
     }
 }
