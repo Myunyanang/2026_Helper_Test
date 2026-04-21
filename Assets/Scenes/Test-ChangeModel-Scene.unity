@@ -303,7 +303,7 @@ GameObject:
   - component: {fileID: 784330637}
   - component: {fileID: 784330636}
   m_Layer: 5
-  m_Name: Button
+  m_Name: LeftButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -375,7 +375,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1541726767}
         m_TargetAssemblyTypeName: ChangeCloths, Assembly-CSharp
-        m_MethodName: ChangeCloth2
+        m_MethodName: ClickLeftButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -482,7 +482,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: efe9b807a9e39cc4e92959d8f1848deb, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1150569822}
   m_SourcePrefab: {fileID: 100100000, guid: efe9b807a9e39cc4e92959d8f1848deb, type: 3}
 --- !u!1 &1047081013
 GameObject:
@@ -541,7 +544,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cloth1 Change
+  m_text: <
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -625,6 +628,19 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efe9b807a9e39cc4e92959d8f1848deb, type: 3}
   m_PrefabInstance: {fileID: 856532569}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1150569822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1150569819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae9d41f65321c0c43af9e81f80f31fa4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanClo: {fileID: 1541726767}
 --- !u!1 &1292237645
 GameObject:
   m_ObjectHideFlags: 0
@@ -682,7 +698,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Cloth2 Change
+  m_text: '>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -884,8 +900,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   body: {fileID: 1150569819}
-  cloth1: {fileID: 8557495719533323938, guid: 5319c01dd0359b64c8b75e92c3f1fd0f, type: 3}
-  cloth2: {fileID: 4914176611648583649, guid: ac3430d1bc3ac5f4e83cf0331c6daeb3, type: 3}
+  cloths:
+  - {fileID: 8557495719533323938, guid: 5319c01dd0359b64c8b75e92c3f1fd0f, type: 3}
+  - {fileID: 4914176611648583649, guid: ac3430d1bc3ac5f4e83cf0331c6daeb3, type: 3}
 --- !u!4 &1541726768
 Transform:
   m_ObjectHideFlags: 0
@@ -1006,7 +1023,7 @@ GameObject:
   - component: {fileID: 1991603528}
   - component: {fileID: 1991603527}
   m_Layer: 5
-  m_Name: Button
+  m_Name: RightButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1078,7 +1095,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1541726767}
         m_TargetAssemblyTypeName: ChangeCloths, Assembly-CSharp
-        m_MethodName: ChangeCloth1
+        m_MethodName: ClickRightButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

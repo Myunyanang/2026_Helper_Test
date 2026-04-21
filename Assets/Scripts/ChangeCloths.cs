@@ -1,16 +1,26 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Video;
 
 public class ChangeCloths : MonoBehaviour
 {
     public GameObject body; //BaseBody
-    public GameObject cloth1; //Cloth1
-    public GameObject cloth2; //Cloth2
+    public GameObject[] cloths; //Cloths
+
+    AnimetorController aniCon;
+    int clothIndex = 0;
+
+    public Action onChangeMotionEvent;
+
 
     void Start()
     {
+        ChangeCloth();
+        aniCon = body.GetComponent<AnimetorController>();
 
+        aniCon.onChangeCloth += ChangeCloth;
     }
 
     void Update()
@@ -18,29 +28,38 @@ public class ChangeCloths : MonoBehaviour
 
     }
 
-    public void ChangeCloth1()
+    public void ChangeCloth()
     {
-        if (GameObject.Find("cloth2(Clone)") != null)
+        GameObject desCloth = GameObject.FindWithTag("cloth");
+        if (desCloth != null)
         {
-            GameObject desCloth = GameObject.Find("cloth2(Clone)");
             Destroy(desCloth);
         }
 
-        GameObject cloth = Instantiate(cloth1);
+        GameObject cloth = Instantiate(cloths[clothIndex]);
         cloth.transform.SetParent(body.transform);
         cloth.transform.Translate(0, 0, 0);
     }
 
-    public void ChangeCloth2()
+    public void ClickLeftButton()
     {
-        if (GameObject.Find("cloth1(Clone)") != null)
-        {
-            GameObject desCloth = GameObject.Find("cloth1(Clone)");
-            Destroy(desCloth);
-        }
+        clothIndex -= 1;
 
-        GameObject cloth = Instantiate(cloth2);
-        cloth.transform.SetParent(body.transform);
-        cloth.transform.Translate(0, 0, 0);
+        if (clothIndex == -1)
+        {
+            clothIndex = cloths.Length - 1;
+        }
+        onChangeMotionEvent.Invoke();
+    }
+
+    public void ClickRightButton()
+    {
+        clothIndex += 1;
+
+        if (clothIndex == cloths.Length)
+        {
+            clothIndex = 0;
+        }
+        onChangeMotionEvent.Invoke();
     }
 }
