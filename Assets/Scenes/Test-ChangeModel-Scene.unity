@@ -903,6 +903,8 @@ MonoBehaviour:
   cloths:
   - {fileID: 8557495719533323938, guid: 5319c01dd0359b64c8b75e92c3f1fd0f, type: 3}
   - {fileID: 4914176611648583649, guid: ac3430d1bc3ac5f4e83cf0331c6daeb3, type: 3}
+  leButton: {fileID: 784330634}
+  riButton: {fileID: 1991603525}
 --- !u!4 &1541726768
 Transform:
   m_ObjectHideFlags: 0

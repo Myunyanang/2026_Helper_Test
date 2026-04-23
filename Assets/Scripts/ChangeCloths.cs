@@ -2,12 +2,15 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.Video;
 
 public class ChangeCloths : MonoBehaviour
 {
     public GameObject body; //BaseBody
     public GameObject[] cloths; //Cloths
+    public GameObject leButton;
+    public GameObject riButton;
 
     AnimetorController aniCon;
     int clothIndex = 0;
@@ -49,6 +52,9 @@ public class ChangeCloths : MonoBehaviour
         }
         onChangeMotionEvent.Invoke();
         ChangeCloth();
+
+        leButton.SetActive(!true);
+        riButton.SetActive(!true);
     }
 
     public void ClickRightButton()
@@ -61,5 +67,8 @@ public class ChangeCloths : MonoBehaviour
         }
         onChangeMotionEvent.Invoke();
         ChangeCloth();
+
+        leButton.SetActive(!true);
+        riButton.SetActive(!true);
     }
 }

@@ -25,4 +25,10 @@ public class AnimetorController : MonoBehaviour
     {
         anim.SetTrigger("isChangeCloth");
     }
+
+    public void EndChange()
+    {
+        chanClo.leButton.SetActive(true);
+        chanClo.riButton.SetActive(true);
+    }
 }
